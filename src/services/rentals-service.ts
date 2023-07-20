@@ -30,7 +30,6 @@ async function getRentalById(rentalId: number) {
 
 async function createRental(rentalInput: RentalInput) {
   const { userId, moviesId } = rentalInput;
-
   const user = await getUserForRental(userId);
   await checkUserAbleToRental(userId);
   await checkMoviesValidForRental(moviesId, user);
