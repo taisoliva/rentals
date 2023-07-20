@@ -4,6 +4,9 @@ import rentalsService from "../../src/services/rentals-service";
 import { pendentRentalError } from "../../src/errors/pendent-rental-error";
 import usersRepository from "repositories/users-repository";
 import moviesRepository from "repositories/movies-repository";
+import { ApplicationError, handleApplicationErrors } from "middlewares/error-handler";
+import { Response, NextFunction, request, response } from "express";
+import httpStatus from "http-status";
 
 
 describe("Rentals Service Unit Tests", () => {
@@ -189,4 +192,5 @@ describe("Rentals Service Unit Tests", () => {
   })
  
 })
+
 
