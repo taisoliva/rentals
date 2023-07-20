@@ -43,8 +43,11 @@ describe("Rentals Service Unit Tests", () => {
       { id: 1, closed: false, date: new Date(), endDate: new Date(), userId: 1 }
     ])
 
-    await expect(rentalsService.createRental(rentalInput)).rejects.toThrowError(
-      pendentRentalError("The user already have a rental!"))
+    await expect(rentalsService.createRental(rentalInput)).rejects.toEqual({
+      message: "The user already have a rental!",
+      name: "PendentRentalError"
+    });
+   
   })
  
 })
